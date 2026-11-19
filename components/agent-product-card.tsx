@@ -63,18 +63,18 @@ export function AgentProductCard({ invocation }: AgentProductCardProps) {
           </div>
           <span
             className={`shrink-0 rounded-full px-2 py-0.5 text-xs font-medium ${
-              !output.stock.inStock
+              !output.inStock
                 ? "bg-destructive/10 text-destructive"
-                : output.stock.lowStock
+                : output.lowStock
                   ? "bg-amber-500/15 text-amber-700 dark:text-amber-400"
                   : "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400"
             }`}
           >
-            {!output.stock.inStock
+            {!output.inStock
               ? "Out of stock"
-              : output.stock.lowStock
-                ? `Only ${output.stock.quantity} left`
-                : `In stock (${output.stock.quantity})`}
+              : output.lowStock
+                ? `Only ${output.stock} left`
+                : `In stock (${output.stock})`}
           </span>
         </div>
         {output.images.length > 1 && (
